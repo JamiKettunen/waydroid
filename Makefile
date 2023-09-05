@@ -53,7 +53,8 @@ install:
 		cp systemd/waydroid-container.service $(INSTALL_SYSD_DIR); \
 	fi
 	if [ $(USE_NFTABLES) = 1 ]; then \
-		sed '/LXC_USE_NFT=/ s/false/true/' -i $(INSTALL_WAYDROID_DIR)/data/scripts/waydroid-net.sh; \
+		sed '/LXC_USE_NFT=/ s/false/true/' data/scripts/waydroid-net.sh \
+			> $(INSTALL_WAYDROID_DIR)/data/scripts/waydroid-net.sh; \
 	fi
 
 install_apparmor:
