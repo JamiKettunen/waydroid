@@ -61,7 +61,7 @@ def service(args, looper):
 def set_permissions(args, perm_list=None, mode="777"):
     def chmod(path, mode):
         if os.path.exists(path):
-            command = ["chmod", mode, "-R", path]
+            command = ["chmod", "-R", mode, path]
             tools.helpers.run.user(args, command, check=False)
 
     # Nodes list
